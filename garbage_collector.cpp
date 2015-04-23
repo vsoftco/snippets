@@ -8,7 +8,6 @@ class GC
 {
     // globally allocated _memory map
     static std::map<void*, std::pair<std::size_t, bool>> _memory;
-
 public:
     struct collect_t {}; // tag for placement new
     static void display_memory();
