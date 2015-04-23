@@ -5,8 +5,8 @@
 #include <iostream>
 #include <map>
 
-std::map<void*, std::size_t> memory; // global allocated memory map
-struct tag {}; // tag for placement new so we don't overload the global one
+std::map<void*, std::size_t> memory; // globally allocated memory map
+struct tag {}; // tag for placement new's so we don't overload the global ones
 
 void* operator new(std::size_t size, const tag&)
 {
