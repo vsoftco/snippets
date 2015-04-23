@@ -8,14 +8,14 @@
 std::map<void*, std::size_t> memory; // global allocated memory map
 struct tag {}; // tag for placement new so we don't overload the global one
 
-void* operator new(std::size_t size, tag)
+void* operator new(std::size_t size, const tag&)
 {
     void* addr = malloc(size);
     memory[addr] = size;
     return addr;
 }
 
-void* operator new[](std::size_t size, tag) // for arrays
+void* operator new[](std::size_t size, const tag&) // for arrays
 {
     return operator new(size, tag());
 }
