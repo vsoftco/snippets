@@ -28,7 +28,7 @@ void operator delete(void *p) noexcept
 
 void operator delete[](void *p) noexcept // for arrays
 {
-    return operator delete(p);
+    operator delete(p);
 }
 
 void display_memory()
