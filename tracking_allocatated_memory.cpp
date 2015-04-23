@@ -28,7 +28,7 @@ void operator delete(void *p) noexcept
 
 void operator delete[](void *p) noexcept // for arrays
 {
-    return operator delete[](p);
+    return operator delete(p);
 }
 
 void display_memory()
@@ -56,7 +56,7 @@ int main()
     display_memory();
 
     // remove p
-    delete p;
+    delete[] p;
 
     // test again if p is allocated
     if (memory.find((void*)p) != memory.end())
