@@ -41,16 +41,19 @@ void display_memory()
     }
 }
 
+bool is_allocated(void* p)
+{
+    return (memory.find(p) != memory.end());
+}
+
 int main()
 {
     int *p = new(tag()) int[10];
     char *c = new(tag()) char;
 
     // test if p is allocated
-    if (memory.find((void*)p) != memory.end())
-        std::cout << "Allocated!" << std::endl;
-    else
-        std::cout << "Not allocated!" << std::endl;
+    std::cout << std::boolalpha << "Allocated: "
+              << is_allocated(p) << std::endl;
 
     // display the allocated memory
     display_memory();
@@ -59,10 +62,8 @@ int main()
     delete[] p;
 
     // test again if p is allocated
-    if (memory.find((void*)p) != memory.end())
-        std::cout << "Allocated!" << std::endl;
-    else
-        std::cout << "Not allocated!" << std::endl;
+    std::cout << std::boolalpha << "Allocated: "
+              << is_allocated(p) << std::endl;
 
     display_memory();
 
