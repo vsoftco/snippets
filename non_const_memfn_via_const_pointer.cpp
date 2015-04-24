@@ -11,7 +11,7 @@ struct Foo
         std::cout << "Foo::f() const" << std::endl;
     }
 
-    void f() 
+    void f()
     {
         std::cout << "Foo::f()" << std::endl;
         ++x;
@@ -23,9 +23,9 @@ struct Foo
 int main(void)
 {
     const Foo foo;
-    
+
     std::cout << foo.x << std::endl; // initially x = 10
-    static_cast<const Foo*>(foo.pFoo)->f();
-    foo.pFoo->f();
+    static_cast<const Foo*>(foo.pFoo)->f(); // calls Foo::f() const
+    foo.pFoo->f(); // calls Foo::() (non-const)
     std::cout << foo.x << std::endl; // modified x, now x = 11
 }
