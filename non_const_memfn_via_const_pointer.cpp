@@ -10,13 +10,11 @@ struct Foo
     {
         std::cout << "Foo::f() const" << std::endl;
     }
-
     void f()
     {
         std::cout << "Foo::f()" << std::endl;
         ++x;
     }
-
     Foo* pFoo{this};
 };
 
