@@ -7,7 +7,8 @@ struct Base
 {
     virtual void f() = 0;
     // we MUST implement a pure virtual destructor,
-    // since it is invoked by the compiler
+    // since it is automatically invoked by the compiler 
+    // whenever a derived destructor is invoked
     virtual ~Base() = 0;
 };
 
