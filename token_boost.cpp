@@ -1,8 +1,9 @@
 // Tokenizing using boost::tokenizer
 
 #include <iostream>
-#include <boost/tokenizer.hpp>
 #include <string>
+
+#include <boost/tokenizer.hpp>
 
 using separator = boost::char_separator<char>;
 using tokenizer = boost::tokenizer<separator>;
