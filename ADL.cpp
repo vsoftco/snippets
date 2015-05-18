@@ -2,7 +2,6 @@
 #include <algorithm>
 #include <iostream>
 
-// some namespace, no need actually, can use the global one
 namespace ADL
 {
 class Foo {};
