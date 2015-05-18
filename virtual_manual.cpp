@@ -1,4 +1,4 @@
-// Simulation of virtual function call via function pointers
+// Simulation of virtual function calls via function pointers
 
 #include <iostream>
 #include <map>
