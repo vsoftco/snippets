@@ -1,4 +1,4 @@
-// Explicit copy ctor
+// Explicit copy constructor
 
 #include <iostream>
 
@@ -6,8 +6,14 @@ class Foo
 {
 public:
     Foo() = default;
-    explicit Foo(const Foo&) = default;    
+    explicit Foo(const Foo&) = default;
 };
+
+Foo foo()
+{
+    Foo foo;
+    return foo; // oops, cannot copy into the return value
+}
 
 int main()
 {
