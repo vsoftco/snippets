@@ -1,5 +1,6 @@
 // Deducing the return type of a function
 // My question and my solution: http://stackoverflow.com/q/30316244/3093378
+// See the answers for alternative solutions
 
 #include <iostream>
 #include <typeinfo>
@@ -15,7 +16,7 @@ struct Helper
 template<typename Ret, typename... Args>
 Helper<Ret, Args...> invoke(Ret(*fp)(Args...))
 {
-    return Helper<Ret, Args...> {};
+    return {};
 }
 
 template<typename Ret, typename... Args>
