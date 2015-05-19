@@ -14,7 +14,6 @@ void f(const Foo&)
 
 int main()
 {
-    Foo foo{};
     f(ADL::Foo{}); // f found by ADL, compiles
     
     // below (f) is not a function call expression
