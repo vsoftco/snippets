@@ -17,7 +17,7 @@ void g(non_deduced_context_t<T> x) {} // cannot deduce the context
 
 int main()
 {
-    int x{};
+    int x = 0;
     f(x); // ok
     // g(x); // doesn't compile, cannot deduce the type of x
     g<int>(x); // compiles, explicit type deduction
