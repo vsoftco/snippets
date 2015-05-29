@@ -2,7 +2,6 @@
 
 #include <functional>
 #include <iostream>
-#include <memory>
 
 struct Foo
 {
@@ -22,48 +21,48 @@ struct Foo
     }
 };
 
-template<class R, class T>
+template<class PTR>
 class Wrapper
 {
-    R T::*_ptr; // pointer to member function
+    PTR _ptr; // pointer to member function
 public:
-    Wrapper(R T::*ptr): _ptr(ptr) {}
+    Wrapper(PTR ptr): _ptr(ptr) {}
 
-    template<typename... Args>
+    template<typename T, typename... Args>
     void operator()(T& obj, Args&&... args) const
     {
         (obj.*_ptr)(std::forward<Args>(args)...);
     }
 
-    template<typename... Args>
+    template<typename T, typename... Args>
     void operator()(const T& obj, Args&&... args) const
     {
         (obj.*_ptr)(std::forward<Args>(args)...);
     }
 
-    template<typename... Args>
+    template<typename T, typename... Args>
     void operator()(T&& obj, Args&&... args) const
     {
         (obj.*_ptr)(std::forward<Args>(args)...);
     }
 
-    template<typename... Args>
+    template<typename T, typename... Args>
     void operator()(T* obj, Args&&... args) const
     {
         (obj->*_ptr)(std::forward<Args>(args)...);
     }
 
-    template<typename... Args>
+    template<typename T, typename... Args>
     void operator()(const T* obj, Args&&... args) const
     {
         (obj->*_ptr)(std::forward<Args>(args)...);
     }
 };
 
-template< class R, class T >
-auto my_mem_fn(R T::* pm)
+template<class PTR>
+auto my_mem_fn(PTR ptr)
 {
-    return Wrapper<R, T> {pm};
+    return Wrapper<PTR> {ptr};
 }
 
 int main()
