@@ -30,25 +30,25 @@ public:
     Wrapper(R T::*ptr): _ptr(ptr) {}
 
     template<typename... Args>
-    void operator()(T& obj, Args... args) const
+    void operator()(T& obj, Args&&... args) const
     {
         (obj.*_ptr)(std::forward<Args>(args)...);
     }
 
     template<typename... Args>
-    void operator()(const T& obj, Args... args) const
+    void operator()(const T& obj, Args&&... args) const
     {
         (obj.*_ptr)(std::forward<Args>(args)...);
     }
 
     template<typename... Args>
-    void operator()(T* obj, Args... args) const
+    void operator()(T* obj, Args&&... args) const
     {
         (obj->*_ptr)(std::forward<Args>(args)...);
     }
 
     template<typename... Args>
-    void operator()(const T* obj, Args... args) const
+    void operator()(const T* obj, Args&&... args) const
     {
         (obj->*_ptr)(std::forward<Args>(args)...);
     }
