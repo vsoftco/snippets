@@ -21,7 +21,7 @@ struct Foo
     }
 };
 
-template<class PTR>
+template<typename PTR>
 class Wrapper
 {
     PTR _ptr; // pointer to member function
