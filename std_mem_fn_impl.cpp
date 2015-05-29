@@ -42,6 +42,12 @@ public:
     }
 
     template<typename... Args>
+    void operator()(T&& obj, Args&&... args) const
+    {
+        (obj.*_ptr)(std::forward<Args>(args)...);
+    }
+
+    template<typename... Args>
     void operator()(T* obj, Args&&... args) const
     {
         (obj->*_ptr)(std::forward<Args>(args)...);
@@ -75,11 +81,13 @@ int main()
     memfn1(cfoo);
     memfn1(pFoo);
     memfn1(cpFoo);
+    memfn1(Foo{42}); // works with rvalues also
 
     memfn2(foo, 10);
     memfn2(pFoo, 10);
-    // memfn2(cfoo, 10);  // const violation
-    // memfn2(cpFoo, 10); // const violation
+    memfn2(Foo{42}, 10);    // works with rvalues also
+    // memfn2(cfoo, 10);    // const violation
+    // memfn2(cpFoo, 10);   // const violation
 
     delete pFoo;
     delete cpFoo;
