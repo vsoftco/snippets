@@ -38,6 +38,7 @@ namespace A
 {
 void g(Int)
 {
-    f<Int>(42); // Point of instantiation (POI)
+    f<Int>(42);
 }
+// Point of instantiation (POI) is here
 }
