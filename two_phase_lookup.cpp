@@ -23,7 +23,7 @@ void f(T i)
 {
     if (i > 0)
     {
-        // found by ADL in POI second lookup phase, no need for forward declaration
+        // found by ADL at POI second-phase lookup, no need for forward declaration
         g(-i); 
     }
 }
@@ -36,6 +36,10 @@ int main()
 
 namespace A
 {
+// this is NOT found at second-phase lookup, since only ADL is performed
+void g(){}
+
+// found by ADL at POI second-phase lookup, no need for forward declaration
 void g(Int)
 {
     f<Int>(42);
