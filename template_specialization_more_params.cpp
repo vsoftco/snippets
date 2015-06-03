@@ -3,13 +3,13 @@
 
 #include <iostream>
 
-// partial template
+// primary template
 template<typename T>
 struct Foo {
     Foo() {std::cout << "Foo<T>\n";}
 };
 
-// partial specialization with more arguments than primary template
+// partial specialization with more arguments than the primary template
 template<typename R, typename... Params>
 struct Foo<R(Params...)>
 {
@@ -18,8 +18,8 @@ struct Foo<R(Params...)>
 
 int main()
 {
-    int x;
+    int n = 0;
     void func();
     Foo<decltype(func)>();
-    Foo<decltype(x)>();
+    Foo<decltype(n)>();
 }
