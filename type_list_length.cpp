@@ -6,16 +6,16 @@
 template<typename Head, typename... Args>
 struct lenght_type_list
 {
-    const static size_t length = 1 + lenght_type_list<Args...>::length;
+    const static size_t value = 1 + lenght_type_list<Args...>::value;
 };
 
 template<typename Head>
 struct lenght_type_list<Head>
 {
-    const static size_t length = 1;
+    const static size_t value = 1;
 };
 
 int main()
 {
-    std::cout << lenght_type_list<int, double, float>::length; // prints 3
+    std::cout << lenght_type_list<int, double, float>::value; // prints 3
 }
