@@ -16,7 +16,7 @@ int main()
     ADL::Foo a, b;
     int x = 0, y = 0;
     
-    using std::swap; // bring ADL into play
-    swap(a, b); // finds ADL::swap
+    using std::swap; // fall back on std::swap if no better alternatives
+    swap(a, b); // finds ADL::swap via ADL, better candidate than std::swap
     swap(x, y); // invokes global swap
 }
