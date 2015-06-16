@@ -14,29 +14,18 @@ struct B
     void id() { std::cout << "B ";}
 };
 
-struct D
-{
-    void id() { std::cout << "D ";}
-};
-
-struct E
-{
-    void id() { std::cout << "E ";}
-};
-
-template<class A, class... As>
-struct C : public A, public As...
+template<class... As>
+struct Expander : public As...
 {
     void id()
     {
-        A::id();
         using expander = int[];
-        (void) expander { 0, ((void) As::id(), 0)... };
+        (void)expander { 0, ((void) As::id(), 0)... };
     }
 };
 
 int main()
 {
-    C<A, B, D, E> c;
-    c.id();
+    Expander<A, B> expander;
+    expander.id();
 }
