@@ -12,14 +12,14 @@ public:
     template<typename... Args>
     void run(Args&&... args) // run it
     {
-        this->_ptr(std::forward<Args>(args)...);
+        _ptr(std::forward<Args>(args)...);
     }
 };
 
 template<typename T>
 auto make_PtrFun(T param)
 {
-    return PtrFun<decltype(param)>(param);
+    return PtrFun<T>(param);
 }
 
 void f(int)
