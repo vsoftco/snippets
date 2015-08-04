@@ -33,7 +33,6 @@ int main()
     // std::cout << foo.x; // cannot do that due to private
     foo.display();
 
-    my_tag tmp;
-    foo.f<my_tag>(tmp); // oops, we access x
+    foo.f<my_tag>(my_tag{}); // oops, we access x
     foo.display();
 }
