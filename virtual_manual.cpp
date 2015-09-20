@@ -27,8 +27,8 @@ public:
     // calls the "virtual" function
     void callv(const std::string& vname)
     {
-        for(HASH_PFN_CITER it=_vtable.cbegin(); it!=_vtable.cend(); ++it)
-            if(it->first==vname)
+        for (HASH_PFN_CITER it = _vtable.cbegin(); it != _vtable.cend(); ++it)
+            if (it->first == vname)
             {
                 (this->*it->second)();
                 return;
@@ -40,11 +40,11 @@ public:
     // define "virtual" functions here
     void _virtual_func()
     {
-        std::cout<<"Calling Base::_virtual_func()"<<std::endl;
+        std::cout << "Calling Base::_virtual_func()" << std::endl;
     }
     void _virtual_another()
     {
-        std::cout<<"Calling Base::_virtual_another()"<<std::endl;
+        std::cout << "Calling Base::_virtual_another()" << std::endl;
     }
 };
 
@@ -59,11 +59,11 @@ public:
     // override "virtual" functions here
     void _virtual_func()
     {
-        std::cout<<"Calling Derived::_virtual_func()"<<std::endl;
+        std::cout << "Calling Derived::_virtual_func()" << std::endl;
     }
     void _virtual_another()
     {
-        std::cout<<"Calling Derived::_virtual_another()"<<std::endl;
+        std::cout << "Calling Derived::_virtual_another()" << std::endl;
     }
 };
 
@@ -78,11 +78,11 @@ public:
     // override "virtual" functions here
     void _virtual_func()
     {
-        std::cout<<"Calling DerivedDerived::_virtual_func()"<<std::endl;
+        std::cout << "Calling DerivedDerived::_virtual_func()" << std::endl;
     }
     void _virtual_another()
     {
-        std::cout<<"Calling DerivedDerived::_virtual_another()"<<std::endl;
+        std::cout << "Calling DerivedDerived::_virtual_another()" << std::endl;
     }
 };
 
