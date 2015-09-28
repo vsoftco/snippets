@@ -46,8 +46,7 @@ int main(int argc, char** argv)
     {
         std::cout << elem;
         if (std::isalpha(elem))
-            std::cout << " - " << dict[std::toupper(elem)] << std::endl;
-        else
-            std::cout << std::endl;
+            std::cout << " - " << dict[std::toupper(elem)];
+        std::cout << std::endl;
     }
 }
