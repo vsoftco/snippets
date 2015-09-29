@@ -32,7 +32,6 @@ int main(int argc, char** argv)
 
     if (argc == 1) // pipe input
     {
-
         for (char elem; std::cin >> elem;)
         {
             std::cout << elem;
