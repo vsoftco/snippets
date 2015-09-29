@@ -33,12 +33,11 @@ int main(int argc, char** argv)
     if (argc == 1) // pipe input
     {
 
-        for (char elem; std::cin >> elem; )
+        for (char elem; std::cin >> elem;)
         {
             std::cout << elem;
             if (std::isalpha(elem))
-                std::cout << " - " << dict[std::toupper(elem)];
-            std::cout << std::endl;
+                std::cout << " - " << dict[std::toupper(elem)] << '\n';
         }
     }
     else // file input
@@ -54,8 +53,7 @@ int main(int argc, char** argv)
         {
             std::cout << elem;
             if (std::isalpha(elem))
-                std::cout << " - " << dict[std::toupper(elem)];
-            std::cout << std::endl;
+                std::cout << " - " << dict[std::toupper(elem)] << '\n';
         }
     }
 }
