@@ -1,4 +1,4 @@
-// Spells the input using the phonetic alphabet
+// Spells the input using the NATO phonetic alphabet
 
 // Possible usage scenarios:
 // spell file.txt
