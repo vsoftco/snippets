@@ -37,7 +37,8 @@ int main(int argc, char** argv)
         {
             std::cout << elem;
             if (std::isalpha(elem))
-                std::cout << " - " << dict[std::toupper(elem)] << '\n';
+                std::cout << " - " << dict[std::toupper(elem)];
+            std::cout << '\n';
         }
     }
     else // file input
@@ -48,12 +49,12 @@ int main(int argc, char** argv)
             std::cout << "Cannot open the input file [" << argv[1] << "]\n";
             std::exit(EXIT_FAILURE);
         }
-        char elem;
-        while (ifile >> elem)
+        for (char elem; ifile >> elem;)
         {
             std::cout << elem;
             if (std::isalpha(elem))
-                std::cout << " - " << dict[std::toupper(elem)] << '\n';
+                std::cout << " - " << dict[std::toupper(elem)];
+            std::cout << '\n';
         }
     }
 }
