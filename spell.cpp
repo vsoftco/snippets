@@ -9,11 +9,11 @@
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
-#include <map>
+#include <unordered_map>
 
 int main(int argc, char** argv)
 {
-    std::map<char, std::string> dict;
+    std::unordered_map<char, std::string> dict;
     dict['A'] = "Alpha";  dict['B'] = "Bravo";    dict['C'] = "Charlie";
     dict['D'] = "Delta";  dict['E'] = "Echo";     dict['F'] = "Foxtrot";
     dict['G'] = "Golf";   dict['H'] = "Hotel";    dict['I'] = "India";
