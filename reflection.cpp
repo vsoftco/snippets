@@ -4,7 +4,7 @@
 #include <iostream>
 #include <typeinfo>
 
-template<typename R, typename... Args>
+template<typename T>
 struct Inspect;
 
 template<typename R, typename... Args>
