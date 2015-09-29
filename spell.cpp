@@ -11,6 +11,18 @@
 #include <fstream>
 #include <unordered_map>
 
+void spell(std::string const& str,
+           std::unordered_map<char, std::string> const& dict)
+{
+    for (auto && elem : str)
+    {
+        std::cout << elem;
+        if (std::isalpha(elem))
+            std::cout << " - " << dict.at(std::toupper(elem));
+        std::cout << '\n';
+    }
+}
+
 int main(int argc, char** argv)
 {
     std::unordered_map<char, std::string> dict;
@@ -30,14 +42,12 @@ int main(int argc, char** argv)
         std::exit(EXIT_FAILURE);
     }
 
+    std::string str;
     if (argc == 1) // pipe input
     {
-        for (char elem; std::cin >> elem;)
+        while (std::getline(std::cin, str))
         {
-            std::cout << elem;
-            if (std::isalpha(elem))
-                std::cout << " - " << dict[std::toupper(elem)];
-            std::cout << '\n';
+            spell(str, dict);
         }
     }
     else // file input
@@ -48,12 +58,9 @@ int main(int argc, char** argv)
             std::cout << "Cannot open the input file [" << argv[1] << "]\n";
             std::exit(EXIT_FAILURE);
         }
-        for (char elem; ifile >> elem;)
+        while (std::getline(ifile, str))
         {
-            std::cout << elem;
-            if (std::isalpha(elem))
-                std::cout << " - " << dict[std::toupper(elem)];
-            std::cout << '\n';
+            spell(str, dict);
         }
     }
 }
