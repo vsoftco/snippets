@@ -1,12 +1,17 @@
 // Spells the input using the phonetic alphabet
-// Usage: spell (end the program with CTRL+D on UNIX, CTRL+Z on Windows)
-// Usage: cat file | spell
+
+// Possible usage scenarios:
+// spell file.txt
+// spell (end the program with CTRL+D on UNIX, CTRL+Z on Windows)
+// cat file | spell
 
 #include <cctype>
+#include <cstdlib>
 #include <iostream>
+#include <fstream>
 #include <map>
 
-int main()
+int main(int argc, char** argv)
 {
     std::map<char, std::string> dict;
     dict['A'] = "Alpha";  dict['B'] = "Bravo";    dict['C'] = "Charlie";
@@ -19,11 +24,38 @@ int main()
     dict['V'] = "Victor"; dict['W'] = "Whiskey";  dict['X'] = "X-ray";
     dict['Y'] = "Yankee"; dict['Z'] = "Zulu";
 
-    for (char elem; std::cin >> elem; )
+    if (argc > 2)
     {
-        std::cout << elem;
-        if (std::isalpha(elem))
-            std::cout << " - " << dict[std::toupper(elem)];
-        std::cout << std::endl;
+        std::cout << "Usage: " << argv[0] << " [file]\n";
+        std::exit(EXIT_FAILURE);
+    }
+
+    if (argc == 1) // pipe input
+    {
+
+        for (char elem; std::cin >> elem; )
+        {
+            std::cout << elem;
+            if (std::isalpha(elem))
+                std::cout << " - " << dict[std::toupper(elem)];
+            std::cout << std::endl;
+        }
+    }
+    else // file input
+    {
+        std::ifstream ifile{argv[1]};
+        if (!ifile)
+        {
+            std::cout << "Cannot open the input file [" << argv[1] << "]\n";
+            std::exit(EXIT_FAILURE);
+        }
+        char elem;
+        while (ifile >> elem)
+        {
+            std::cout << elem;
+            if (std::isalpha(elem))
+                std::cout << " - " << dict[std::toupper(elem)];
+            std::cout << std::endl;
+        }
     }
 }
