@@ -1,6 +1,6 @@
 // Spells the input using the phonetic alphabet
-// Usage: spell (end with CTRL+D on UNIX, CTRL+Z on Windows)
-// Usage: cat file > spell
+// Usage: spell (end the program with CTRL+D on UNIX, CTRL+Z on Windows)
+// Usage: cat file | spell
 
 #include <cctype>
 #include <iostream>
