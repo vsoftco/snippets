@@ -2,7 +2,7 @@
 
 // Possible usage scenarios:
 // spell file.txt
-// spell (end the program with CTRL+D on UNIX, CTRL+Z on Windows)
+// spell  # end the program with CTRL+D on UNIX, CTRL+Z on Windows
 // cat file | spell
 // echo "Text" | spell
 
