@@ -22,7 +22,7 @@ struct Foo
 
 // Utility type deduction factory
 template <typename T1, typename T2>
-Functor<T1, T2> make_Functor(T1 T2::* t)
+Functor<T1, T2> sort_by(T1 T2::* t)
 {
     return Functor<T1, T2>(t);
 }
@@ -32,14 +32,12 @@ int main()
     std::vector<Foo> v{{9, 89}, {10, 10}, {5, 100}};
 
     std::cout << "Sorting by the first member x" << std::endl;
-    auto by_x = make_Functor(&Foo::x);
-    std::sort(v.begin(),  v.end(),  by_x);
+    std::sort(v.begin(),  v.end(), sort_by(&Foo::x));
     for (auto && elem : v)
         std::cout << std::setw(2) << elem.x << " -> " << elem.y << std::endl;
 
     std::cout << "Sorting by the second member y" << std::endl;
-    auto by_y = make_Functor(&Foo::y);
-    std::sort(v.begin(),  v.end(),  by_y);
+    std::sort(v.begin(),  v.end(), sort_by(&Foo::y));
     for (auto && elem : v)
         std::cout << std::setw(2) << elem.x << " -> " << elem.y << std::endl;
 }
