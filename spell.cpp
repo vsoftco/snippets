@@ -1,18 +1,19 @@
 // Spells the input using the NATO phonetic alphabet
 
-// Possible usage scenarios:
-// spell file.txt
-// spell  # end the program with CTRL+D on UNIX, CTRL+Z on Windows
-// cat file | spell
-// echo "Text" | spell
+/* Possible usage scenarios:
+ 
+ spell # spells from the console, end with CTRL+D (UNIX) or CTRL+Z (Windows)
+ spell "text"
+ cat file | spell
+
+*/
 
 #include <cctype>
 #include <cstdlib>
 #include <iostream>
-#include <fstream>
 #include <unordered_map>
 
-void spell(std::string const& str,
+void spell(const std::string& str,
            std::unordered_map<char, std::string> const& dict)
 {
     for (auto && elem : str)
@@ -20,8 +21,9 @@ void spell(std::string const& str,
         std::cout << elem;
         if (std::isalpha(elem))
             std::cout << " - " << dict.at(std::toupper(elem));
-        std::cout << '\n';
+        std::cout << std::endl;
     }
+    // std::cout << "<CR>\n";
 }
 
 int main(int argc, char** argv)
@@ -39,7 +41,7 @@ int main(int argc, char** argv)
 
     if (argc > 2)
     {
-        std::cout << "Usage: " << argv[0] << " [file]\n";
+        std::cout << "Usage: " << argv[0] << " [text]\n";
         std::exit(EXIT_FAILURE);
     }
 
@@ -51,17 +53,8 @@ int main(int argc, char** argv)
             spell(str, dict);
         }
     }
-    else // file input
+    else // text input
     {
-        std::ifstream ifile{argv[1]};
-        if (!ifile)
-        {
-            std::cout << "Cannot open the input file [" << argv[1] << "]\n";
-            std::exit(EXIT_FAILURE);
-        }
-        while (std::getline(ifile, str))
-        {
-            spell(str, dict);
-        }
+        spell(argv[1], dict);
     }
 }
