@@ -41,7 +41,7 @@ int main(int argc, char** argv)
 
     if (argc > 2)
     {
-        std::cout << "Usage: " << argv[0] << " [text]\n";
+        std::cerr << "Usage: " << argv[0] << " [text]\n";
         std::exit(EXIT_FAILURE);
     }
 
