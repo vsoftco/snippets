@@ -7,9 +7,8 @@
 auto timing = [](auto && F, auto && ... params)
 {
     auto start = std::chrono::steady_clock::now();
-    //std::forward<decltype(F)>(F) // why apply also on F instead of
-    // the line below?
-    F(std::forward<decltype(params)>(params)...); // execute the function
+    // execute the function
+    std::forward<decltype(F)>(F)(std::forward<decltype(params)>(params)...); 
     return std::chrono::duration_cast<std::chrono::milliseconds>(
                std::chrono::steady_clock::now() - start).count();
 };
