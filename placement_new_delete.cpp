@@ -14,9 +14,10 @@ struct Foo
     static void operator delete(void* p)
     {
         std::cout << R"(Calling custom "operator delete")" << std::endl;
-        // set the memory to -1
+        // set the memory to -1 for the first 8 bytes
+        // we make sure we have a buffer of at least 8 bytes in main()
         for (std::size_t i = 0; i < 8; ++i)
-            ((char*)p)[i] = 0;
+            ((char*)p)[i] = -1;
         // release the memory
         ::operator delete(p); // don't do this for stack-allocated arrays!
     }
