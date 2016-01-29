@@ -39,7 +39,7 @@ auto make_range(T fist, T last, T step = 1)
 
 int main()
 {
-    for (int i : make_range(10, 20, 2))
+    for (auto i : make_range(10, 20, 2))
     {
         std::cout << i << std::endl;
     }
