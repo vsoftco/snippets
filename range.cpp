@@ -1,4 +1,4 @@
-// Python-like simple ranges in C++14
+// Python-like simple range in C++14
 
 #include <iostream>
 #include <type_traits>
