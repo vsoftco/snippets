@@ -13,7 +13,7 @@
 #include <iostream>
 #include <unordered_map>
 
-void spell(const std::string& str,
+void spell(std::string const& str,
            std::unordered_map<char, std::string> const& dict)
 {
     for (auto && elem : str)
@@ -23,7 +23,6 @@ void spell(const std::string& str,
             std::cout << " - " << dict.at(std::toupper(elem));
         std::cout << std::endl;
     }
-    // std::cout << "<CR>\n";
 }
 
 int main(int argc, char** argv)
