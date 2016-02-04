@@ -6,9 +6,9 @@
 
 int main()
 {
-    auto lambda = [](auto x, auto ) {return x + 1;};
+    std::list<int> li(10); // list with 10 elements
 
-    std::list<int> li(10);
+    auto lambda = [](auto x, auto) {return x + 1;}; // folding lambda
 
     // left fold, default
     auto llength = std::accumulate(li.begin(), li.end(), 0, lambda);
