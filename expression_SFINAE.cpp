@@ -10,6 +10,7 @@ struct Y {
 template <class T> auto f(T t1, T t2) -> decltype(t1 + t2) // #1
 {
     std::cout << __PRETTY_FUNCTION__ << std::endl;
+    return {};
 }
 X f(Y, Y) // #2
 {
