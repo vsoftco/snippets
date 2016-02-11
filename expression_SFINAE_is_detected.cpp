@@ -3,6 +3,7 @@
 // From: http://stackoverflow.com/a/35349163/3093378
 
 #include <type_traits>
+#include <utility>
 
 struct Foo
 {
