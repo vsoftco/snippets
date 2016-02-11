@@ -15,9 +15,9 @@ struct Bar {
 };
 
 template<typename...>
-using void_t = int;
+using void_t = void;
 
-template<typename C, typename = int>
+template<typename C, typename = void>
 struct has_const_ham: std::false_type{};
 
 template<typename C>
