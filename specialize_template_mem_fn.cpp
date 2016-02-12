@@ -2,16 +2,16 @@
 
 #include <iostream>
 
-template<class T>
+template<typename T>
 struct Foo
 {
-    template<class U>
+    template<typename U>
     void f();
 };
 
 /* OK, generic definition */
-template<class T> // outer
-    template<class U> // inner
+template<typename T> // outer
+    template<typename U> // inner
 void Foo<T>::f()
 {
     std::cout << "Generic: " << __PRETTY_FUNCTION__ << std::endl;
@@ -26,19 +26,19 @@ void Foo<int>::f<int>()
 }
 
 /* NOT ALLOWED, seen as partial specialization of mem fn F<>
-template<class T> // outer
-    template<class U> // inner
+template<typename T> // outer
+    template<typename U> // inner
 void Foo<T>::f<U>(){}
 */ 
 
 /* NOT ALLOWED, partial specialization
 template<>
-    template<class U>
+    template<typename U>
 void Foo<int>::f<U>(){}
 */
 
 /* NOT ALLOWED, enclosing class must be fully specialized
-template<class T>
+template<typename T>
     template<>
 void Foo<T>::f<double>(){}
 */ 
