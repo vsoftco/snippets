@@ -2,9 +2,10 @@
 // Question: http://stackoverflow.com/q/30179181/3093378
 // Answer: http://stackoverflow.com/a/30179412/3093378
 
+#include <cstddef>
 #include <iostream>
 
-constexpr size_t N = 3;
+constexpr std::size_t N = 3;
 
 template<typename, typename...>
 struct are_same;

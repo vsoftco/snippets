@@ -3,15 +3,16 @@
 // which got it from http://www.gotw.ca/gotw/029.htm
 
 #include <cctype>
-#include <string>
+#include <cstddef>
 #include <iostream>
+#include <string>
 
 struct ci_char_traits : public std::char_traits<char>
 {
     static bool eq(char c1, char c2) {return ::toupper(c1) == ::toupper(c2);}
     static bool ne(char c1, char c2) {return ::toupper(c1) != ::toupper(c2);}
     static bool lt(char c1, char c2) {return ::toupper(c1) <  ::toupper(c2);}
-    static int compare(const char* s1, const char* s2, size_t n)
+    static int compare(const char* s1, const char* s2, std::size_t n)
     {
         while ( n-- != 0 )
         {
