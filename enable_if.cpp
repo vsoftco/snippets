@@ -23,5 +23,5 @@ int main()
     std::cout << foo(42.5) << std::endl;
     std::cout << foo(42) << std::endl;
     // the line below won't compile, substitution error
-    //std::cout << foo("test") << std::endl; 
+    // std::cout << foo("test") << std::endl; 
 }
