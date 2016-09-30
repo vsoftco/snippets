@@ -25,7 +25,6 @@ struct Y
     T<int, std::allocator<int>> member{};
 };
 
-
 int main()
 {
     X<std::vector> x;
