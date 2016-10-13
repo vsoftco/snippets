@@ -1,5 +1,5 @@
 // Disabling ADL
-// See comment by 0x499602D2 on http://stackoverflow.com/a/30265205/3093378
+// See the comment of 0x499602D2 on http://stackoverflow.com/a/30265205/3093378
 
 #include <iostream>
 

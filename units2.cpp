@@ -2,10 +2,10 @@
 
 #include <iostream>
 
-//internally for everything use SI units.
-//mass in kilograms,
-//time in seconds
-//length in meters
+// internally for everything use SI units.
+// mass in kilograms,
+// time in seconds
+// length in meters
 
 template <int M, int L, int T>
 class Unit;
@@ -92,20 +92,20 @@ typedef Unit<1, 0, 0> Mass;
 typedef Unit<0, 1, 0> Length;
 typedef Unit<0, 0, 1> Time;
 
-//length units - verify the constants
+// length units - verify the constants
 const Length meter = 1.0;
 const Length centimeter = 0.01;
 const Length feet = 0.3048 * meter;
 const Length mile = 5280 * feet;
 
-//time units
+// time units
 const Time second = 1.0;
 
-//mass units
+// mass units
 const Mass kilogram = 1.0;
 
-//Can have more constants for all other units in terms of meter, second and kilogram
-//feet,yard,inches,micrometer,hour,minute,grams,pounds, etc etc etc....
+// can have more constants for all other units in terms of meter, second and kilogram
+// feet,yard,inches,micrometer,hour,minute,grams,pounds, etc etc etc....
 
 int main()
 {
@@ -113,7 +113,7 @@ int main()
     Length distanceinFeets = distanceinCMs * centimeter / feet;
     std::cout << "distanceinCMs = " << distanceinCMs.getValue() << std::endl;
     std::cout << "distanceinFeets = " << distanceinFeets.getValue() << std::endl;
-    //get in terms of miles and feets
+    // get in terms of miles and feets
     double total_in_miles = (distanceinCMs * centimeter / mile).getValue();
     double total_in_feets = (distanceinCMs * centimeter / feet).getValue();
 
