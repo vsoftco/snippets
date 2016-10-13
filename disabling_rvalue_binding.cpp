@@ -18,8 +18,8 @@ const X get_const_rvalue_X()
 }
 
 // below we need the const X&& as otherwise the output of the function
-// get_const_rvalue_X() will bind to void f(const X&) since the latter
-// is a better match than void f(X&&) below
+// const X get_const_rvalue_X() will bind to void f(const X&) since 
+// the latter is a better match than void f(X&&) below
 void f(const X&&) = delete; // need const!
 
 int main()
