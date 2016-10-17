@@ -17,8 +17,8 @@ void f(Foo_t foo) // pass by "reference"
 
 int main()
 {
-    Foo_t foo1{1, 2};
-    std::cout << foo1->x << " " << foo1->y << std::endl;
-    f(foo1); // we modify foo1
-    std::cout << foo1->x << " " << foo1->y << std::endl;
+    Foo_t foo{1, 2};
+    std::cout << foo->x << " " << foo->y << std::endl;
+    f(foo); // we modify foo
+    std::cout << foo->x << " " << foo->y << std::endl;
 }
