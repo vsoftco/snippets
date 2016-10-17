@@ -4,8 +4,8 @@
 
 struct Foo
 {
-    int x{};
-    double y{};
+    int x;
+    double y;
 };
 using Foo_t = Foo[1];
 
@@ -19,6 +19,6 @@ int main()
 {
     Foo_t foo1{1, 2};
     std::cout << foo1->x << " " << foo1->y << std::endl;
-    f(foo1);
+    f(foo1); // we modify foo1
     std::cout << foo1->x << " " << foo1->y << std::endl;
 }
