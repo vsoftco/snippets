@@ -127,7 +127,7 @@ int main()
     //y = x;
     std::cout << std::boolalpha << (y == x) << std::endl;
     std::cout << (x / y) << std::endl;
-    std::cout << (strong_typedef<double, 0>(10) == x) << std::endl;
+    std::cout << (strong_typedef<double, 0>(10) >= x) << std::endl;
 
     strong_typedef<double, 1> z;
     std::cin >> z;
