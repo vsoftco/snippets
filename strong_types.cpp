@@ -71,7 +71,8 @@ struct strong_typedef
         return *this;
     }
 
-    friend std::ostream& operator<<(std::ostream& lhs, const strong_typedef& rhs)
+    friend std::ostream& operator<<(std::ostream& lhs, 
+            const strong_typedef& rhs)
     {
         lhs << rhs.value;
         return lhs;
