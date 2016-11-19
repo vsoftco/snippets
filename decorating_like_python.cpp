@@ -5,7 +5,7 @@
 template<class T>
 auto decorator(T&& func)
 {
-    auto new_function = [func{std::forward<decltype(func)>(func)}](auto && ... args)
+    auto new_function = [func{std::forward<T>(func)}](auto && ... args)
     {
         std::cout << "BEGIN decorating...\n";
         auto result = func(std::forward<decltype(args)>(args)...);
