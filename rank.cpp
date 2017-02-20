@@ -1,7 +1,8 @@
+// Computes the rank (number of dimensions) of a multi-dimensional array 
+// at compile time
+
 #include <iostream>
 #include <cstddef>
-
-// finds the rank of an array
 
 template<typename T>
 struct rank
