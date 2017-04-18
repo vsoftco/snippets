@@ -19,8 +19,9 @@ const X get_const_rvalue_X()
 
 // below we need the const X&& as otherwise the output of the function
 // const X get_const_rvalue_X() will bind to void f(const X&) since 
-// the latter is a better match than void f(X&&) below
+// the latter is a better match than simply void f(X&&) commented below
 void f(const X&&) = delete; // need const!
+// void f(X&&) = delete; // this is not enough!
 
 int main()
 {
