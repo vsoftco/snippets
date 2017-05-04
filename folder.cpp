@@ -1,4 +1,4 @@
-// Left-folder functor that recurse on itself
+// Left-folder functor that recurses on itself
 // See http://stackoverflow.com/a/43787883/3093378 (my SO answer)
 
 #include <iostream>
