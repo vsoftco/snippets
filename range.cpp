@@ -47,5 +47,5 @@ int main()
     auto it = make_range(-0.5, 0.5, 0.1);
     std::cout << *(it++) << std::endl;
     std::cout << *(++it) << std::endl;
-    std::cout << *it;
+    std::cout << *it << std::endl;
 }
