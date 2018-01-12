@@ -19,7 +19,7 @@ void spell(std::string const& str,
     for (auto && elem : str)
     {
         std::cout << elem;
-        if (std::isalpha(elem))
+        if (dict.find(std::toupper(elem)) != dict.end())
             std::cout << " - " << dict.at(std::toupper(elem));
         std::cout << std::endl;
     }
@@ -28,6 +28,7 @@ void spell(std::string const& str,
 int main(int argc, char** argv)
 {
     std::unordered_map<char, std::string> dict;
+    // Convention: use capital letters for the keys
     dict['A'] = "Alpha";  dict['B'] = "Bravo";    dict['C'] = "Charlie";
     dict['D'] = "Delta";  dict['E'] = "Echo";     dict['F'] = "Foxtrot";
     dict['G'] = "Golf";   dict['H'] = "Hotel";    dict['I'] = "India";
@@ -45,14 +46,14 @@ int main(int argc, char** argv)
     }
 
     std::string str;
-    if (argc == 1) // pipe input
+    if (argc == 1) // spells from the standard input
     {
         while (std::getline(std::cin, str))
         {
             spell(str, dict);
         }
     }
-    else // text input
+    else // spells specifed text
     {
         spell(argv[1], dict);
     }
