@@ -4,7 +4,6 @@
 #include <iostream>
 
 namespace X {
-
 extern "C" {
 void test() { std::cout << "C linkage\n"; }
 }
@@ -12,8 +11,7 @@ void test() { std::cout << "C linkage\n"; }
 // void test() {} // won't compile!
 
 void test(int){std::cout << "C++ linkage\n";}
-
-}
+} // namespace X
 
 // all extern "C" functions share the same space of names
 // so we can "bring" test() into the global namespace
