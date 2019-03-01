@@ -21,7 +21,7 @@ void spell(std::string const& str,
         std::cout << elem;
         if (dict.find(std::toupper(elem)) != dict.end())
             std::cout << " - " << dict.at(std::toupper(elem));
-        std::cout << std::endl;
+        std::cout << '\n';
     }
 }
 
@@ -51,6 +51,7 @@ int main(int argc, char** argv)
         while (std::getline(std::cin, str))
         {
             spell(str, dict);
+            std::cout << "----- newline -----\n";
         }
     }
     else // spells specifed text
