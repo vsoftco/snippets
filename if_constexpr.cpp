@@ -1,4 +1,4 @@
-// constexpr example
+// if constexpr example
 
 #include <type_traits>
 #include <iostream>
