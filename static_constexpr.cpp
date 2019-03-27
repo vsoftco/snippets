@@ -1,5 +1,5 @@
 // static constexpr initialization example
-// Will not work with only static char str[] = "test";
+// will not work with only static char str[] = "test";
 
 #include <iostream>
 
