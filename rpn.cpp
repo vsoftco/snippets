@@ -40,6 +40,6 @@ double RPN(std::string expr)
 
 int main()
 {
-    std::string expr = "9 7 + 5 3 - /";
+    std::string expr = "10 4 3 + 2 * -";
     std::cout << RPN(expr) << std::endl;
 }
