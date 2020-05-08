@@ -6,13 +6,13 @@
 using namespace std;
 
 struct A {
-  ~A() { cout << "~A" << endl; }
+    ~A() { cout << "~A" << endl; }
 };
 
 struct B : A {
-  ~B() { cout << "~B" << endl; }
+    ~B() { cout << "~B" << endl; }
 };
 
 int main() {
-  const A &a = B(); // calling the right destructor without virtual dispatch!
+    const A& a = B(); // calling the right destructor without virtual dispatch!
 }

@@ -7,7 +7,7 @@
 #include <iterator>
 
 int main() {
-  std::istreambuf_iterator<char> is{std::cin};
-  std::transform(is, {}, std::ostream_iterator<char>(std::cout),
-                 [](char c) { return std::toupper(c); });
+    std::istreambuf_iterator<char> is{std::cin};
+    std::transform(is, {}, std::ostream_iterator<char>(std::cout),
+                   [](char c) { return std::toupper(c); });
 }

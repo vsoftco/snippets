@@ -4,8 +4,8 @@
 #include <iostream>
 
 struct Foo {
-  // Foo(): str{"won't compile"}{} // will not compile
-  static constexpr char str[] = "test";
+    // Foo(): str{"won't compile"}{} // will not compile
+    static constexpr char str[] = "test";
 };
 constexpr char Foo::str[];
 

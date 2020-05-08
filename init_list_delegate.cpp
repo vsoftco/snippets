@@ -5,10 +5,10 @@
 #include <initializer_list>
 
 struct test {
-  /*explicit*/ test(int) {} // uncomment explicit and no more errors
+    /*explicit*/ test(int) {} // uncomment explicit and no more errors
 
-  // error, implicitly converts 42 to test(42) via the test(int)
-  test(std::initializer_list<test> v) : test{42} {}
+    // error, implicitly converts 42 to test(42) via the test(int)
+    test(std::initializer_list<test> v) : test{42} {}
 };
 
 int main() {}

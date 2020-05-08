@@ -18,7 +18,7 @@ void test(int) { std::cout << "C++ linkage\n"; }
 extern "C" void test();
 
 int main() {
-  X::test();   // C linkage
-  test();      // C linkage
-  X::test(42); // C++ linkage
+    X::test();   // C linkage
+    test();      // C linkage
+    X::test(42); // C++ linkage
 }

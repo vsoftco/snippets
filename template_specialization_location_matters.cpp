@@ -6,24 +6,24 @@
 
 template <class T> // (a) a base template
 void f(T) {
-  std::cout << "void f(T)\n";
+    std::cout << "void f(T)\n";
 }
 
 template <class T> // (b) a second base template, overloads (a)
-void f(T *)        //     (function templates can't be partially
+void f(T*)         //     (function templates can't be partially
                    //     specialized; they overload instead)
 {
-  std::cout << "void f(T*)\n";
+    std::cout << "void f(T*)\n";
 }
 
 template <> // (c) explicit specialization of (b)
-void f<>(int *) {
-  std::cout << "void f<>(int*)\n";
+void f<>(int*) {
+    std::cout << "void f<>(int*)\n";
 }
 
 int main() {
-  int *p = nullptr;
-  f(p); // calls (c);
-        // Note: switching the order of (b) with (c) will result in calling
-  // f(T*), since f<>(int*) will be seen as an explicit specialization of (a)
+    int* p = nullptr;
+    f(p); // calls (c);
+          // Note: switching the order of (b) with (c) will result in calling
+    // f(T*), since f<>(int*) will be seen as an explicit specialization of (a)
 }

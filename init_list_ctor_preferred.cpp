@@ -6,17 +6,17 @@
 #include <iostream>
 
 class Foo {
-public:
-  Foo(std::initializer_list<Foo>) {
-    std::cout << "initializer_list ctor" << std::endl;
-  }
-  // uncomment explicit to prevent the implicit conversion
-  /* explicit */ Foo(int) { std::cout << "ctor" << std::endl; };
-  Foo(const Foo &) { std::cout << "copy ctor" << std::endl; }
+  public:
+    Foo(std::initializer_list<Foo>) {
+        std::cout << "initializer_list ctor" << std::endl;
+    }
+    // uncomment explicit to prevent the implicit conversion
+    /* explicit */ Foo(int) { std::cout << "ctor" << std::endl; };
+    Foo(const Foo&) { std::cout << "copy ctor" << std::endl; }
 };
 
-int main(int argc, char const *argv[]) {
-  // why is the initializer_list ctor invoked?
-  // because initializer_list ctor "trumps" everything!
-  Foo foo{10}; // converts 10 to Foo, then uses the init-list ctor
+int main(int argc, char const* argv[]) {
+    // why is the initializer_list ctor invoked?
+    // because initializer_list ctor "trumps" everything!
+    Foo foo{10}; // converts 10 to Foo, then uses the init-list ctor
 }

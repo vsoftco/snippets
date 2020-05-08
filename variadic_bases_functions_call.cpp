@@ -5,21 +5,22 @@
 #include <iostream>
 
 struct A {
-  void id() { std::cout << "A "; }
+    void id() { std::cout << "A "; }
 };
 
 struct B {
-  void id() { std::cout << "B "; }
+    void id() { std::cout << "B "; }
 };
 
-template <class... As> struct Expander : public As... {
-  void id() {
-    using expander = int[];
-    (void)expander{0, ((void)As::id(), 0)...};
-  }
+template <class... As>
+struct Expander : public As... {
+    void id() {
+        using expander = int[];
+        (void) expander{0, ((void) As::id(), 0)...};
+    }
 };
 
 int main() {
-  Expander<A, B> expander;
-  expander.id();
+    Expander<A, B> expander;
+    expander.id();
 }

@@ -8,8 +8,8 @@
 using Foo = int; // we need a type alias
 
 int main() {
-  int x = 10;
-  x.~Foo(); // this is a call to a pseudo-destructor, it is a no-op
-  x = 20;
-  std::cout << x << std::endl;
+    int x = 10;
+    x.~Foo(); // this is a call to a pseudo-destructor, it is a no-op
+    x = 20;
+    std::cout << x << std::endl;
 }
