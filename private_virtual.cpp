@@ -2,26 +2,17 @@
 
 #include <iostream>
 
-class Base
-{
+class Base {
 public:
-    virtual void f()
-    {
-        std::cout << "Base::f()" << std::endl;
-    }
-    virtual ~Base() = default;
+  virtual void f() { std::cout << "Base::f()" << std::endl; }
+  virtual ~Base() = default;
 };
 
-class Derived: public Base
-{
+class Derived : public Base {
 private:
-    virtual void f() override
-    {
-        std::cout << "Derived::f()" << std::endl;
-    }
+  virtual void f() override { std::cout << "Derived::f()" << std::endl; }
 };
-int main()
-{
-    Base *base = new Derived;
-    base->f();
+int main() {
+  Base *base = new Derived;
+  base->f();
 }

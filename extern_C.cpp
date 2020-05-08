@@ -5,12 +5,12 @@
 
 namespace X {
 extern "C" {
-    void test() { std::cout << "C linkage\n"; }
+void test() { std::cout << "C linkage\n"; }
 }
 
 // void test() {} // won't compile!
 
-void test(int) {std::cout << "C++ linkage\n";}
+void test(int) { std::cout << "C++ linkage\n"; }
 } // namespace X
 
 // all extern "C" functions share the same space of names
@@ -18,7 +18,7 @@ void test(int) {std::cout << "C++ linkage\n";}
 extern "C" void test();
 
 int main() {
-    X::test();   // C linkage
-    test();      // C linkage
-    X::test(42); // C++ linkage
+  X::test();   // C linkage
+  test();      // C linkage
+  X::test(42); // C++ linkage
 }

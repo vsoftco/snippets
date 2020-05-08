@@ -3,14 +3,10 @@
 
 #include <iostream>
 
-struct Foo
-{
-    // Foo(): str{"won't compile"}{} // will not compile
-    static constexpr char str[] = "test";
+struct Foo {
+  // Foo(): str{"won't compile"}{} // will not compile
+  static constexpr char str[] = "test";
 };
 constexpr char Foo::str[];
 
-int main()
-{
-    std::cout << Foo::str << '\n';
-}
+int main() { std::cout << Foo::str << '\n'; }

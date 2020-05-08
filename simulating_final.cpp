@@ -4,37 +4,25 @@
 using namespace std;
 
 // virtual base class
-class MakeFinal
-{
+class MakeFinal {
 private:
-    MakeFinal() {
-        std::cout << "MakeFinal::MakeFinal()" << std::endl;
-    }
-    friend class Final;
+  MakeFinal() { std::cout << "MakeFinal::MakeFinal()" << std::endl; }
+  friend class Final;
 };
 
 // final class
-class Final : virtual MakeFinal
-{
+class Final : virtual MakeFinal {
 public:
-    Final() {
-        std::cout << "Final::Final()" << std::endl;
-    }
+  Final() { std::cout << "Final::Final()" << std::endl; }
 };
 
 // the constructor of MakeFinal is directly invoked
-// by the last class in the hierarchy 
+// by the last class in the hierarchy
 // (due to virtual inheritance from MakeFinal)
 // but it is not accessible
-class Derived : public Final
-{
+class Derived : public Final {
 public:
-    Derived() {
-        std::cout << "Derived::Derived()" << std::endl;
-    }
+  Derived() { std::cout << "Derived::Derived()" << std::endl; }
 };
 
-int main()
-{
-    Derived obj;
-}
+int main() { Derived obj; }

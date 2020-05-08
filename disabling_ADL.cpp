@@ -3,20 +3,15 @@
 
 #include <iostream>
 
-namespace ADL
-{
+namespace ADL {
 struct Foo {};
-void f(const Foo&)
-{
-    std::cout << "ADL::f" << std::endl;
-}
-}
+void f(const Foo &) { std::cout << "ADL::f" << std::endl; }
+} // namespace ADL
 
-int main()
-{
-    f(ADL::Foo{}); // f found by ADL, compiles
-    
-    // below (f) is not a function call expression
-    // ADL does not kick in, and therefore it does not compile
-    (f)(ADL::Foo{}); 
+int main() {
+  f(ADL::Foo{}); // f found by ADL, compiles
+
+  // below (f) is not a function call expression
+  // ADL does not kick in, and therefore it does not compile
+  (f)(ADL::Foo{});
 }

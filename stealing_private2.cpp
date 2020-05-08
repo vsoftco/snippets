@@ -4,40 +4,31 @@
 
 #include <iostream>
 
-class Foo
-{
+class Foo {
 public:
-    int getx() const
-    {
-        return _x;
-    }
+  int getx() const { return _x; }
+
 private:
-    int _x{42};
+  int _x{42};
 };
 
 // access rules are not enforced in templates
 // so circumvent the access rules by using a pointer-to-member
-template<int Foo::*mem_ptr> 
-struct Thief
-{
-    friend int& steal(Foo& foo)
-    {
-        return foo.*mem_ptr;
-    }
+template <int Foo::*mem_ptr> struct Thief {
+  friend int &steal(Foo &foo) { return foo.*mem_ptr; }
 };
 
 // make the Thief friend function visible outside
-int& steal(Foo& foo);
+int &steal(Foo &foo);
 
 // implicit instantiation which in effect defines int& steal(Foo& foo);
 template struct Thief<&Foo::_x>;
 
-int main()
-{
-    Foo foo;
-    std::cout << foo.getx() << '\n';
-    steal(foo) = 100;
+int main() {
+  Foo foo;
+  std::cout << foo.getx() << '\n';
+  steal(foo) = 100;
 
-    // bam, proof:
-    std::cout << foo.getx() << '\n';
+  // bam, proof:
+  std::cout << foo.getx() << '\n';
 }
