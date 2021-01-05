@@ -1,6 +1,13 @@
 // Stealing private members, code snippet from:
-// http://bloglitb.blogspot.de/2011/12/access-to-private-members-safer.html
-// See also: http://stackoverflow.com/q/424104/3093378
+// https://bloglitb.blogspot.com/2011/12/access-to-private-members-safer.html
+//
+// See also: 
+//
+// https://stackoverflow.com/q/424104/3093378
+// https://stackoverflow.com/questions/12993219/access-private-member-using-template-trick
+// 
+// And also Overload 156 (pg. 22)
+// https://members.accu.org/index.php/journals/2776
 
 #include <iostream>
 

@@ -1,6 +1,13 @@
 // Stealing private members, take 2, simplified with explanations
 // See stealing_private1.cpp for a more general solutions
 // The code is adapted from http://cpp.kjx.cz/private_backdoor.html
+//
+// See also:
+// https://stackoverflow.com/q/424104/3093378
+// https://stackoverflow.com/questions/12993219/access-private-member-using-template-trick
+//
+// And also Overload 156 (pg. 22)
+// https://members.accu.org/index.php/journals/2776
 
 #include <iostream>
 
