@@ -1,7 +1,7 @@
 // Spells the input using the NATO phonetic alphabet
 
 /* Possible usage scenarios:
- 
+ 
  spell # spells from the console, end with CTRL+D (UNIX) or CTRL+Z (Windows)
  spell "text"
  cat file | spell
