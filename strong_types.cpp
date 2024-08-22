@@ -10,7 +10,7 @@ struct strong_typedef {
     T value{}; // the  wrapped value, zero by default
 
     strong_typedef() = default;
-    strong_typedef(const T& x) : value(x){};
+    strong_typedef(const T& x) : value(x) {};
     // copy ctors and assignment operators are defaulted
 
     // relational operators

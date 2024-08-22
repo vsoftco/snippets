@@ -18,18 +18,20 @@ double RPN(std::string expr) {
             double y = stck.top();
             stck.pop();
 
-            if (token == "+")
+            if (token == "+") {
                 stck.push(y + x);
-            else if (token == "-")
+            } else if (token == "-") {
                 stck.push(y - x);
-            else if (token == "*")
+            } else if (token == "*") {
                 stck.push(y * x);
-            else if (token == "/")
+            } else if (token == "/") {
                 stck.push(y / x);
+            }
         }
     }
-    if (stck.size() != 1)
+    if (stck.size() != 1) {
         throw std::runtime_error("Invalid expression!");
+    }
     return stck.top();
 }
 

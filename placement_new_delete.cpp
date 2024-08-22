@@ -14,8 +14,9 @@ struct Foo {
         std::cout << R"(Calling custom "operator delete")" << std::endl;
         // set the memory to -1 for the first 8 bytes
         // we make sure we have a buffer of at least 8 bytes in main()
-        for (std::size_t i = 0; i < 8; ++i)
-            ((char*) p)[i] = -1;
+        for (std::size_t i = 0; i < 8; ++i) {
+            ((char*)p)[i] = -1;
+        }
         // release the memory
         ::operator delete(p); // don't do this for stack-allocated arrays!
     }
@@ -25,9 +26,10 @@ struct Foo {
 };
 
 void disp_buf(void* buf, std::size_t size) {
-    for (std::size_t i = 0; i < size; ++i)
+    for (std::size_t i = 0; i < size; ++i) {
         std::cout << std::hex << std::showbase << std::uppercase
-                  << (int) ((char*) buf)[i] << " ";
+                  << (int)((char*)buf)[i] << " ";
+    }
     std::cout << std::dec;
     std::cout << std::endl;
 }

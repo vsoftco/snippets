@@ -16,13 +16,15 @@ int main() {
     std::iota(perm.begin(), perm.end(), 0);
     do {
         int sum = 0;
-        for (std::size_t i = 0; i < perm.size(); ++i)
+        for (std::size_t i = 0; i < perm.size(); ++i) {
             sum += arrays[i][perm[i]];
+        }
         result.push_back(sum);
     } while (std::next_permutation(perm.begin(), perm.end()));
 
     // display the result
     std::cout << "The possible sums are: " << std::endl;
-    for (auto elem : result)
+    for (auto elem : result) {
         std::cout << elem << " ";
+    }
 }

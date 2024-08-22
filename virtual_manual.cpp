@@ -26,11 +26,12 @@ class Base {
 
     // calls the "virtual" function
     void callv(const std::string& vname) {
-        for (HASH_PFN_CITER it = _vtable.cbegin(); it != _vtable.cend(); ++it)
+        for (HASH_PFN_CITER it = _vtable.cbegin(); it != _vtable.cend(); ++it) {
             if (it->first == vname) {
                 (this->*it->second)();
                 return;
             }
+        }
 
         throw std::runtime_error("Function is not in vtable!");
     }

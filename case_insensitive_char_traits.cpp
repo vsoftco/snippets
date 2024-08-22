@@ -13,10 +13,12 @@ struct ci_char_traits : public std::char_traits<char> {
     static bool lt(char c1, char c2) { return ::toupper(c1) < ::toupper(c2); }
     static int compare(const char* s1, const char* s2, std::size_t n) {
         while (n-- != 0) {
-            if (::toupper(*s1) < ::toupper(*s2))
+            if (::toupper(*s1) < ::toupper(*s2)) {
                 return -1;
-            if (::toupper(*s1) > ::toupper(*s2))
+            }
+            if (::toupper(*s1) > ::toupper(*s2)) {
                 return 1;
+            }
             ++s1;
             ++s2;
         }

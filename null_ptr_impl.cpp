@@ -7,7 +7,7 @@ struct null_pointer {
     template <typename T>
     operator T*() {
         std::cout << "Converting to raw pointer" << std::endl;
-        return (T*) (0);
+        return (T*)(0);
     }
 
     template <typename T>
@@ -40,7 +40,7 @@ int main() {
     // g(np); // does not compile
 
     // Explicit conversions to raw pointers
-    (void*) np;
+    (void*)np;
     h();
 
     // Conversions to smart pointers

@@ -16,9 +16,9 @@ class Node {
 void insert(std::shared_ptr<Node>& head, int data) {
     // create a new Node
     auto newNode = std::make_shared<Node>(data);
-    if (!head) // empty list
+    if (!head) { // empty list
         head = newNode;
-    else // otherwise
+    } else // otherwise
     {
         auto copy_head = head; // make a copy, we don't want to modify the head
         while (copy_head->get_next()) {

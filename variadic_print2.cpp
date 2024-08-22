@@ -5,10 +5,11 @@
 
 void print(const char* s) {
     while (s && *s) {
-        if (*s == '%' && *++s != '%')
+        if (*s == '%' && *++s != '%') {
             // make sure that there wasn't meant to be more arguments
             // %% represents plain % in a format string
             throw std::runtime_error("invalid format: missing arguments");
+        }
         std::cout << *s++;
     }
 }

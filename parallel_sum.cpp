@@ -9,8 +9,9 @@
 template <typename RAIter>
 int parallel_sum(RAIter beg, RAIter end) {
     auto len = std::distance(beg, end);
-    if (len < 1000)
+    if (len < 1000) {
         return std::accumulate(beg, end, 0);
+    }
 
     RAIter mid = beg + len / 2;
     auto handle =

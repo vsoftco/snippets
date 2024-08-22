@@ -28,11 +28,13 @@ int main() {
 
     std::cout << "Sorting by the first member x" << std::endl;
     std::sort(v.begin(), v.end(), sort_by(&Foo::x));
-    for (auto&& elem : v)
+    for (auto&& elem : v) {
         std::cout << std::setw(2) << elem.x << " -> " << elem.y << std::endl;
+    }
 
     std::cout << "Sorting by the second member y" << std::endl;
     std::sort(v.begin(), v.end(), sort_by(&Foo::y));
-    for (auto&& elem : v)
+    for (auto&& elem : v) {
         std::cout << std::setw(2) << elem.x << " -> " << elem.y << std::endl;
+    }
 }

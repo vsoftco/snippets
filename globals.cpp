@@ -17,13 +17,15 @@ class Globals {
     }
     // getters
     static int var1() noexcept {
-        if (!ok)
+        if (!ok) {
             throw std::runtime_error("Error: members not initialized");
+        }
         return _var1;
     }
     static int var2() noexcept {
-        if (!ok)
+        if (!ok) {
             throw std::runtime_error("Error: members not initialized");
+        }
         return _var2;
     }
 };

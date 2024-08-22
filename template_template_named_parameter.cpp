@@ -28,6 +28,7 @@ int main() {
     x.member.push_back(10);
     x.member.push_back(20);
 
-    for (auto&& elem : x.member)
+    for (auto&& elem : x.member) {
         std::cout << elem << " ";
+    }
 }

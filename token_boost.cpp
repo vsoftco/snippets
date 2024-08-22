@@ -11,7 +11,8 @@ using tokenizer = boost::tokenizer<separator>;
 int main() {
     std::string str = ";;Hello|world||-foo--bar;yow;baz|";
     tokenizer tokens(str, separator("-;|"));
-    for (auto&& elem : tokens)
+    for (auto&& elem : tokens) {
         std::cout << "<" << elem << "> ";
+    }
     std::cout << "\n";
 }

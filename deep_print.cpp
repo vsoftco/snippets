@@ -8,7 +8,7 @@
 template <class T>
 void pretty_print(const T& arg, std::string delim, std::string left_separator,
                   std::string right_separator, std::ostream& os) {
-    (void) delim, (void) left_separator, (void) right_separator;
+    (void)delim, (void)left_separator, (void)right_separator;
     os << arg;
 }
 

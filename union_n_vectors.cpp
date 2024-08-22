@@ -16,6 +16,7 @@ int main() {
         result = std::move(tmp);
     }
     result.erase(std::unique(result.begin(), result.end()), result.end());
-    for (auto&& elem : result)
+    for (auto&& elem : result) {
         std::cout << elem << " ";
+    }
 }

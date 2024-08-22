@@ -17,8 +17,9 @@ void spell(std::string const& str,
            std::unordered_map<char, std::string> const& dict) {
     for (auto&& elem : str) {
         std::cout << elem;
-        if (dict.find(std::toupper(elem)) != dict.end())
+        if (dict.find(std::toupper(elem)) != dict.end()) {
             std::cout << " - " << dict.at(std::toupper(elem));
+        }
         std::cout << '\n';
     }
 }

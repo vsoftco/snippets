@@ -24,7 +24,7 @@ int main() {
     {
         RAIIcout_redirect tmp(ofile);
         f(); // call f
-    }        // now redirect back because of ~RAIIcout_redirect()
+    } // now redirect back because of ~RAIIcout_redirect()
 
     std::cout << "Done writing to file" << std::endl;
 }

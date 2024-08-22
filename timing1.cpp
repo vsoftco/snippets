@@ -21,13 +21,13 @@ void f(std::size_t numsteps) // we'll measure how long this function runs
 }
 
 int main() {
-    auto taken = timing(f, 500'000'000); // measure the time taken to run f()
+    auto taken = timing(f, 500 '000' 000); // measure the time taken to run f()
     std::cout << "Took " << taken << " milliseconds" << std::endl;
 
-    taken = timing(f, 100'000'000); // measure again
+    taken = timing(f, 100 '000' 000); // measure again
     std::cout << "Took " << taken << " milliseconds" << std::endl;
 
-    std::cout << "Took " << timing([numsteps = (std::size_t) 100000000] {
+    std::cout << "Took " << timing([numsteps = (std::size_t)100000000] {
         for (volatile std::size_t i = 0; i < numsteps; ++i)
             ;
     }) << " milliseconds"

@@ -40,10 +40,10 @@ auto timing(Return (Object::*fp)(Params1...), Params2... params) {
 };
 
 int main() {
-    auto taken1 = timing(f, 500'000'000); // measure the time taken to run f()
+    auto taken1 = timing(f, 500 '000' 000); // measure the time taken to run f()
     std::cout << "Took " << taken1 << " milliseconds" << std::endl;
 
     auto taken2 =
-        timing(&X::f, 500'000'000); // measure the time taken to run X::f()
+        timing(&X::f, 500 '000' 000); // measure the time taken to run X::f()
     std::cout << "Took " << taken2 << " milliseconds" << std::endl;
 }

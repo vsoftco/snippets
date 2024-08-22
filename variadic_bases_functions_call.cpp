@@ -16,7 +16,7 @@ template <class... As>
 struct Expander : public As... {
     void id() {
         using expander = int[];
-        (void) expander{0, ((void) As::id(), 0)...};
+        (void)expander{0, ((void)As::id(), 0)...};
     }
 };
 
